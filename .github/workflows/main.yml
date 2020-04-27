@@ -17,4 +17,8 @@ jobs:
       uses: verdaccio/github-actions/publish@v0.1.0
       with:
         args: -d
+    - name: Print log
+      run: cat /github/home/.npm/_logs/*-debug.log
+        
+      
 
