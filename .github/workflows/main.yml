@@ -11,11 +11,12 @@ jobs:
     
    steps: 
     
-      - name: log node version
+      - name: Install Verdaccio
         run : |
-          node -v
-          cat /etc/*eleas*
-          whoami
+          npm install -g verdaccio
+          npm install -g verdaccio-auth-memory
+          npm install -g verdaccio-memory
+          npm install -g npm-auth-to-token
           
           
       - uses: actions/checkout@v1  
