@@ -8,11 +8,14 @@ on:
   push:
     
 jobs:
-  testVerdaccio:
-    runs-on: ubuntu-latest
-    
+  verdaccio-docker:
+   runs-on: ubuntu-latest
+   container: 
+    image: verdaccio/verdaccio:4
     steps: 
-      - name: Install Verdaccio
+      - name: log node version
         run : |
-          docker pull verdaccio/verdaccio:4
-          docker run -it --rm --name verdaccio -p 4873:4873 verdaccio
+          node -v
+          cat /etc/*eleas*
+          
+   
