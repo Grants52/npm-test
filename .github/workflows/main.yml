@@ -19,9 +19,9 @@ jobs:
           cat /etc/*eleas*
           
       - name: Configure Verdaccio
+        with: actions/checkout@v1
         run: |
-           cp entrypoint.sh /entrypoint.sh
-           entrypoint.sh
+           ./script.sh
             
           
    
