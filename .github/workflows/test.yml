@@ -13,7 +13,7 @@ jobs:
           
         - name: Install Verdaccio
           run: |
-            npm install -g verdaccio
+            sudo npm install -g verdaccio
             
         - name: Configure Verdaccio
           run: |
