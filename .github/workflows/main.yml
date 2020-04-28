@@ -18,4 +18,9 @@ jobs:
           node -v
           cat /etc/*eleas*
           
+      - name: Configure Verdaccio
+        run: |
+           entrypoint.sh
+            
+          
    
