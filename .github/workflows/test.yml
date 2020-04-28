@@ -4,16 +4,19 @@ on:
   push:
 
 jobs:
-     docs-site_deploy_pipeline:
+     test_verdaccio_pipeline:
       runs-on: ubuntu-latest
       
       steps:
         - name: Git clone repository
           uses: actions/checkout@v2  
           
-        - name: Build Docs-site
+        - name: Install Verdaccio
           run: |
             npm install -g verdaccio
+            
+        - name: Configure Verdaccio
+          run: |
             cat <<EOF >config.yaml
             auth:
               auth-memory:
