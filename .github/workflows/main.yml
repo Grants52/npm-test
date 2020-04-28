@@ -14,7 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Publish
-      uses: verdaccio/github-actions/publish@master
+      uses: grants52/gha-test/publish@master
       with:
         args: -d
      
