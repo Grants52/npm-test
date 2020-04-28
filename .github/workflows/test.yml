@@ -1,4 +1,4 @@
-name: Branch-deployment
+name: Smoke-Testing
 
 on:
   push:
