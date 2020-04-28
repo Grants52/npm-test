@@ -15,12 +15,15 @@ jobs:
           node -v
           cat /etc/*eleas*
       
-      - uses: actions/checkout@v1  
-      - name: Configure Verdaccio
-        uses: docker://verdaccio/verdaccio:4
-        with:
-          entrypoint: ./entrypoint.sh
-
+      #- uses: actions/checkout@v1  
+      #- name: Configure Verdaccio
+       # uses: docker://verdaccio/verdaccio:4
+      #with:
+       #   entrypoint: ./entrypoint.sh
+      - name: log node version2
+        run : |
+          node -v
+          cat /etc/*eleas*
          
             
           
