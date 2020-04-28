@@ -14,10 +14,17 @@ jobs:
         run : |
           node -v
           cat /etc/*eleas*
-          whoami
+          chown -R verdaccio $HOME
+          
+      - uses: actions/checkout@v1  
+      - name: Configure Verdaccio1
+        uses: docker://verdaccio/verdaccio:4
+        with:
+          entrypoint: /bin/cp
+          args: "config.yaml /config.yaml"
       
       - uses: actions/checkout@v1  
-      - name: Configure Verdaccio
+      - name: Configure Verdaccio2
         uses: docker://verdaccio/verdaccio:4
         with:
           entrypoint: ./entrypoint.sh
