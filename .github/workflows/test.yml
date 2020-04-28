@@ -42,8 +42,9 @@ jobs:
             logs:
              - {type: stdout, format: pretty, level: trace}
             EOF
-            ls -l
-            pwd
-            which verdaccio
-           # cp config.yaml .config/verdaccio/config.yaml 
-           # nohup verdaccio --config .config/verdaccio/config.yaml
+            
+            
+            verdaccio
+            
+            cp config.yaml .config/verdaccio/config.yaml 
+            nohup verdaccio --config .config/verdaccio/config.yaml
