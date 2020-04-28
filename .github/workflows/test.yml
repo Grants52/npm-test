@@ -47,9 +47,9 @@ jobs:
             EOF
             
             
-            verdaccio
-            
-            cp config.yaml .config/verdaccio/config.yaml 
-            nohup verdaccio --config .config/verdaccio/config.yaml
-            npm-auth-to-token -u test -p test -e test@test.com -r http://localhost:4873/
-            npm publish --registry http://localhost:4873/
+            local_registry="http://localhost:4873"
+            tmp_registry_log=`mktemp`
+            mkdir -p .config/verdaccio
+            nohup verdaccio --config .config/verdaccio/config.yaml &>$tmp_registry_log &
+            npm-auth-to-token -u test -p test -e test@test.com -r $local_registry
+            npm publish --registry $local_registry
