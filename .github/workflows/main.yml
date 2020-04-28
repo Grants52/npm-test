@@ -20,6 +20,7 @@ jobs:
           
       - name: Configure Verdaccio
         run: |
+           cp entrypoint.sh /entrypoint.sh
            entrypoint.sh
             
           
