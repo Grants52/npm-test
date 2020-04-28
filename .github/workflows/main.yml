@@ -17,9 +17,9 @@ jobs:
           npm install -g verdaccio-auth-memory
           npm install -g verdaccio-memory
           npm install -g npm-auth-to-token
-          cp config.yaml /config.yaml
           
-      
+      - name : Copy config
+        run  : config.yaml /config.yaml
       
       - uses: actions/checkout@v1  
       - name: Configure Verdaccio2
