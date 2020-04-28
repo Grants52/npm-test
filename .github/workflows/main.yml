@@ -19,7 +19,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Publish
-      uses: Grants52/gha-test@v1
+      uses: Grants52/gha-test@v2
       with:
         args: -d  
   
