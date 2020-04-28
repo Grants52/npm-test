@@ -28,7 +28,7 @@ jobs:
       
       - uses: actions/checkout@v1  
       - name: Configure Verdaccio2
-        uses: docker://verdaccio/verdaccio:4
+        uses: docker://node:12
         with:
           entrypoint: ./entrypoint.sh
      
