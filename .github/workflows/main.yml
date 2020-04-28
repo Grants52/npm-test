@@ -14,10 +14,10 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Publish
-      uses: verdaccio/github-actions/publish@v0.1.0
+      uses: verdaccio/github-actions/publish@master
       with:
         args: -d
-      run: cat /github/home/.npm/_logs/*-debug.log
+     
         
       
 
