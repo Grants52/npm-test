@@ -47,7 +47,7 @@ jobs:
             EOF
             
             
-            local_registry="http://localhost:4873"
+            local_registry="http://localhost:4873/"
             tmp_registry_log=`mktemp`
             mkdir -p .config/verdaccio
             nohup verdaccio --config .config/verdaccio/config.yaml &>$tmp_registry_log &
