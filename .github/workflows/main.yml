@@ -14,7 +14,7 @@ jobs:
         run : |
           node -v
           cat /etc/*eleas*
-          chown -R verdaccio $HOME
+          sudo chown -R verdaccio $HOME
           
       - uses: actions/checkout@v1  
       - name: Configure Verdaccio1
