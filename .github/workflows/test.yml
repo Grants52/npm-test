@@ -1,0 +1,43 @@
+name: Branch-deployment
+
+on:
+  push:
+
+jobs:
+     docs-site_deploy_pipeline:
+      runs-on: ubuntu-latest
+      
+      steps:
+        - name: Git clone repository
+          uses: actions/checkout@v2  
+          
+        - name: Build Docs-site
+          run: |
+            npm install -g verdaccio
+            cat <<EOF >config.yaml
+            auth:
+              auth-memory:
+                users:
+                  foo:
+                    name: test
+                    password: test
+            store:
+              memory:
+                limit: 1000
+            ## we don't need any remote request
+            uplinks:
+            packages:
+              '@*/*':
+                access: $all
+                publish: $all
+              '**':
+                access: $all
+                publish: $all
+            middlewares:
+              audit:
+                enabled: true
+            logs:
+             - {type: stdout, format: pretty, level: trace}
+            EOF
+            cp config.yaml $HOME/.config/verdaccio/config.yaml 
+            nohup verdaccio --config $HOME/.config/verdaccio/config.yaml
