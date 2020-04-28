@@ -2,28 +2,22 @@
 
 name: Verdaccio-CI
 
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
 on:
   push:
-  
-  
-  
-
-
-  
+ 
 jobs:
   testVerdaccio:
     name: Test Verdaccio Publish
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - name: Publish
+    - name: Spin Up Private NPM
       uses: Grants52/gha-test@v2
       with:
         args: -d  
-  
-
+    
+    - name: Confirm version   
+      run: cat /etc/*eleas*
          
             
           
