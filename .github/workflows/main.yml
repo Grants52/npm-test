@@ -9,15 +9,14 @@ on:
     
 jobs:
   testVerdaccio:
-    name: Test Verdaccio Publish
     runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v1
-    - name: Publish
-      uses: grants52/gha-test/publish@master
-      with:
-        args: -d
-     
-        
-      
-
+    
+    steps: 
+      - name: Install Verdaccio
+        run : |
+          npm install -g verdaccio
+          npm install -g verdaccio-auth-memory
+          npm install -g verdaccio-memory
+          npm install -g npm-auth-to-token
+          cp config.yaml /config.yaml
+          entrypoint.sh
