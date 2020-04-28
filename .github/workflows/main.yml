@@ -7,14 +7,14 @@ jobs:
   verdaccio-docker:
    runs-on: ubuntu-latest
    container: 
-    image: verdaccio/verdaccio:4
+    image: node:12
    steps: 
     
       - name: log node version
         run : |
           node -v
           cat /etc/*eleas*
-          ls -l $HOME
+          
           
       - uses: actions/checkout@v1  
       - name: Configure Verdaccio1
