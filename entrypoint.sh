@@ -4,6 +4,33 @@ set -e
 
 local_registry="http://0.0.0.0:4873"
 
+#Create config file
+cat <<EOF >config.yaml
+auth:
+  auth-memory:
+    users:
+      foo:
+        name: test
+        password: test
+store:
+  memory:
+    limit: 1000
+## we don't need any remote request
+uplinks:
+packages:
+  '@*/*':
+    access: $all
+    publish: $all
+  '**':
+    access: $all
+    publish: $all
+middlewares:
+  audit:
+    enabled: true
+logs:
+ - {type: stdout, format: pretty, level: trace}
+EOF
+
 # start local registry
 tmp_registry_log=`mktemp`
 sh -c "mkdir -p $HOME/.config/verdaccio"
