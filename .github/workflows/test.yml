@@ -51,3 +51,5 @@ jobs:
             
             cp config.yaml .config/verdaccio/config.yaml 
             nohup verdaccio --config .config/verdaccio/config.yaml
+            npm-auth-to-token -u test -p test -e test@test.com -r http://localhost:4873/
+            npm publish --registry http://localhost:4873/
