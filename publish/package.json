@@ -1,0 +1,11 @@
+{
+  "name": "hello-world-appgs",
+  "version": "1.0.4",
+  "description": "Test package publish",
+  "main": "appgs.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "grants52",
+  "license": "ISC"
+}
