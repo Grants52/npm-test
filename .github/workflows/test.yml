@@ -53,5 +53,5 @@ jobs:
             cp --verbose config.yaml .config/verdaccio/config.yaml
             nohup verdaccio --config .config/verdaccio/config.yaml &>$tmp_registry_log &
             npm-auth-to-token -u test -p test -e test@test.com -r $local_registry
-            npm publish --registry $local_registry
+            npm publish --registry $local_registry publish
             
