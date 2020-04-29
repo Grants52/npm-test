@@ -1,7 +1,7 @@
 name: Verdaccio-CI
 
-on:
-  push:
+#on:
+#  push:
     
 jobs:
   verdaccio-docker:
