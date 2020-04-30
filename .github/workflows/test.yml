@@ -64,6 +64,7 @@ jobs:
         - name: Install package
           run  : |
             sudo mkdir /test_install
+            sudo chmod 777 /test_install
             cd /test_install
             npm install hello-world-appgs
             ls -l
