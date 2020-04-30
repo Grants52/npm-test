@@ -58,5 +58,7 @@ jobs:
         - name: Publish packages
           run  : |
             echo $local_registry
-            npm publish --registry $local_registry latest publish 
+            local_registry="http://0.0.0.0:4873"
+            echo $local_registry
+            npm publish --registry $local_registry 
             
