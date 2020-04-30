@@ -56,5 +56,5 @@ jobs:
             cat .config/verdaccio/config.yaml
             
         - name: Publish packages
-          run  : npm publish --registry $local_registry publish
+          run  : npm publish --registry $local_registry publish packages
             
