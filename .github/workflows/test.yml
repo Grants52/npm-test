@@ -63,7 +63,7 @@ jobs:
             
         - name: Publish packages
           run  : |
-            mkdir test_install
-            cd test_install
+            mkdir /test_install
+            cd /test_install
             npm install hello-world-appgs
             ls -l
