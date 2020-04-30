@@ -34,11 +34,11 @@ jobs:
             uplinks:
             packages:
               '@*/*':
-                access: $all
-                publish: $all
+                access: "$all"
+                publish: "$all"
               '**':
-                access: $all
-                publish: $all
+                access: "$all"
+                publish: "$all"
             middlewares:
               audit:
                 enabled: true
