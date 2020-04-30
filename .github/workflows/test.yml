@@ -34,11 +34,11 @@ jobs:
             uplinks:
             packages:
               '@*/*':
-                access: "$all"
-                publish: "$all"
+                access: \$all
+                publish: \$all
               '**':
-                access: "$all"
-                publish: "$all"
+                access: \$all
+                publish: \$all
             middlewares:
               audit:
                 enabled: true
@@ -54,5 +54,7 @@ jobs:
             nohup verdaccio --config .config/verdaccio/config.yaml &>$tmp_registry_log &
             npm-auth-to-token -u test -p test -e test@test.com -r $local_registry
             cat .config/verdaccio/config.yaml
-            #npm publish --registry $local_registry publish
+            
+        - name: Publish packages
+          run  : npm publish --registry $local_registry publish
             
