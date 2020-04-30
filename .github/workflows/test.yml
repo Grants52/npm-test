@@ -66,5 +66,5 @@ jobs:
             sudo mkdir /test_install
             sudo chmod 777 /test_install
             cd /test_install
-            yarn install hello-world-appgs
+            yarn add hello-world-appgs
             ls -l
