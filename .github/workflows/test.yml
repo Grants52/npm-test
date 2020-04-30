@@ -61,9 +61,9 @@ jobs:
           run  : |
             npm publish --registry ${{env.LOCAL_REGISTRY}}
             
-        - name: Publish packages
+        - name: Install package
           run  : |
-            mkdir /test_install
+            sudo mkdir /test_install
             cd /test_install
             npm install hello-world-appgs
             ls -l
