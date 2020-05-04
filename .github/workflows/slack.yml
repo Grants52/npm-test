@@ -13,5 +13,4 @@ jobs:
       - name: Send Slack message
         run: |
             curl -X POST -H 'Content-type: application/json' 
-            --data '{"text":"npmsmoketest workflow completed"}' 
-            ${{ secrets.SLACK_WEBHOOK }}
+            --data '{"text":"npmsmoketest workflow completed"}'${{ secrets.SLACK_WEBHOOK }}
