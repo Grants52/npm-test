@@ -3,7 +3,7 @@ name: Slack-test
 on:
   push:
    
-  jobs:
+jobs:
      test_slack_messaging:
       runs-on: ubuntu-latest
       
