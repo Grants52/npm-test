@@ -13,7 +13,7 @@ jobs:
       - name: Send Slack message
         run: |
             curl -X POST -H 'Content-type: application/json' \
-            --data '{"text":"${{github.workflow}} status ${{github.job.status}} "}' \
+            --data '{"text":"${{github.workflow}} status ${{job.status}} "}' \
             '${{ secrets.SLACK_WEBHOOK }}'
             
       - name: Dump GitHub context
