@@ -2,9 +2,8 @@ name: Slack-test
 
 on:
   push:
-  
-       
-jobs:
+   
+  jobs:
      test_slack_messaging:
       runs-on: ubuntu-latest
       
@@ -12,7 +11,7 @@ jobs:
 
 
       - name: Send Slack message
-          run: |
+        run: |
             curl -X POST -H 'Content-type: application/json' 
             --data '{"text":"npmsmoketest workflow completed"}' 
             ${{ secrets.SLACK_WEBHOOK }}
